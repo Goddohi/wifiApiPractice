@@ -7,20 +7,6 @@ import java.util.List;
 
 @Getter @Setter
 public class WifiInfo {
-    private int list_total_count;
-    private Result RESULT;
-    private List<Row> row;
-
-
-    @Getter @Setter
-    public static class Result {
-        private String CODE;
-        private String MESSAGE;
-
-    }
-
-    @Getter @Setter
-    public static class Row {
         private String X_SWIFI_MGR_NO;
         private String X_SWIFI_WRDOFC;
         private String X_SWIFI_MAIN_NM;
@@ -39,4 +25,3 @@ public class WifiInfo {
         private String WORK_DTTM;
 
     }
-}
