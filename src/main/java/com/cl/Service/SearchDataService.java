@@ -57,13 +57,13 @@ public class SearchDataService {
                 double LNT = resultSet.getDouble("LNT");
                 Timestamp searchTime = resultSet.getTimestamp("search_time");
 
-                SearchData searchData = new SearchData().builder()
+                //불러온 데이터를 리스트에 추가 (빌더방식으로 객체생성)
+                list.add(new SearchData().builder()
                         .id(id)
                         .LAT(LAT)
                         .LNT(LNT)
                         .searchTime(searchTime)
-                        .build();
-                list.add(searchData);
+                        .build());
             }
 
         } catch (SQLException e) {

@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>데이터불러오기</title>
 </head>
 <body>
 <% WifiApi wifiApi = new WifiApi();
@@ -21,11 +21,11 @@
     session.setAttribute("wifiList", wifiList);
     session.setAttribute("lastnum", wifiApi.lastnum);
 %>
-<div style="color: darkgreen">
+<div style="color: darkgreen; text-align: center; ">
     <h1><%=wifiApi.lastnum+"개의 Wifi정보를 불러왔습니다\n"%></h1>
-</div>
-<a href="/JavaEnterprise/" style="color: blue; text-decoration: underline;">메인으로 돌아가기</a>
 
+<a href="/JavaEnterprise/" style="color: blue; text-decoration: underline;">메인으로 돌아가기</a>
+</div>
 
 </body>
 </html>

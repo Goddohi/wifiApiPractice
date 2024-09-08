@@ -1,16 +1,10 @@
 <%@ page import="com.cl.DTO.SearchData" %>
 <%@ page import="com.cl.Service.SearchDataService" %>
-<%@ page import="java.util.List" %><%--
-  Created by IntelliJ IDEA.
-  User: pc
-  Date: 2024-09-08
-  Time: 오전 9:47
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>조회내역</title>
     <style>
         #customers {
             font-family: Arial, Helvetica, sans-serif;
@@ -42,7 +36,10 @@
     <% SearchDataService searchDataService = new SearchDataService();
         List<SearchData> searchDatas= searchDataService.selectSearchData();
     %>
-
+        <!--(제출이후 개선)-->
+        <div>
+            <h2> 공공 WIFI 정보 받아오기 </h2>
+        </div>
         <a href="/JavaEnterprise/" style="color: blue; text-decoration: underline;">홈</a>
 
         <table id="customers">

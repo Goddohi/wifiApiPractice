@@ -83,10 +83,16 @@
           double wifiLnt = wifi.getLNT(); // 경도 값 가져오기
           double distance = wifi.haversine(lat, lnt);
 
-          //1km미만의 값만 받기
-          if(distance<=1) {
+          //2km미만의 값만 받기(자체로직추가)
+          if(distance<=2) {
             wifi.setDistance(distance);
             findwifiList.add(wifi);
+          }
+          //문제규칙에는 없는데
+          // 주간체크리스트에 20개라고 해놨길래
+          // 20개를 넘어갈 경우 Stop
+          if(findwifiList.size()>=20) {
+            break;
           }
         }
 
@@ -102,13 +108,19 @@
     e.printStackTrace();
   }
 %>
+<!-- 매인 홈 화면 (제출이후 개선)-->
 <div>
+  <h2> 공공 WIFI 정보 받아오기 </h2>
+</div>
 
+<div>
   <a href="/JavaEnterprise/" style="color: blue; text-decoration: underline;">홈</a>
-
   <a href="/JavaEnterprise/SearchData.jsp" style="color: blue; text-decoration: underline;">조회내역</a>
   <a href="/JavaEnterprise/load-wifi.jsp" style="color: blue; text-decoration: underline;">공공wifi데이터불러오기</a>
 </div>
+
+<!-- 입력란  -->
+
 <form onsubmit="event.preventDefault(); submitForm();">
   <label for="lat">LAT:</label>
   <input type="text" id="lat" name="lat"  required>
