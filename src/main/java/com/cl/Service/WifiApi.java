@@ -5,7 +5,6 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
@@ -28,6 +27,7 @@ public class WifiApi {
             // lastnum 값에 따라 1000개씩 데이터를 가져옴
             for (int i = 1; i <= lastnum; i += 1000) {
                 // API URL 설정
+                //입력받은 키 넣으세용!
                 String key = "";
                 String apiUrl = String.format("http://openapi.seoul.go.kr:8088/%s/json/TbPublicWifiInfo/%d/%d/",key, i, i + 999);
                 HttpURLConnection conn = (HttpURLConnection) new URL(apiUrl).openConnection();

@@ -23,5 +23,16 @@ public class WifiInfo {
         private double LAT;
         private double LNT;
         private String WORK_DTTM;
+        private double distance;
 
+        public double haversine(double lat1, double lon1) {
+                final double R = 6371; // 지구의 반경 (km)
+                double dLat = Math.toRadians(LAT - lat1);
+                double dLon = Math.toRadians(LNT - lon1);
+                double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                        Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(LAT)) *
+                                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+                double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                return R * c;
+        }
     }

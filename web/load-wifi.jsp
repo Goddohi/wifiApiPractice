@@ -14,6 +14,18 @@
     <title>Title</title>
 </head>
 <body>
+<% WifiApi wifiApi = new WifiApi();
+    List<WifiInfo> wifiList = wifiApi.getWifiInfoFromApi();
+    session = request.getSession();
+    // 세션에 데이터 저장
+    session.setAttribute("wifiList", wifiList);
+    session.setAttribute("lastnum", wifiApi.lastnum);
+%>
+<div style="color: darkgreen">
+    <h1><%=wifiApi.lastnum+"개의 Wifi정보를 불러왔습니다\n"%></h1>
+</div>
+<a href="/JavaEnterprise/" style="color: blue; text-decoration: underline;">메인으로 돌아가기</a>
+
 
 </body>
 </html>
